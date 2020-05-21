@@ -7,38 +7,60 @@ head
   link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' crossorigin='anonymous')
   link(rel="stylesheet", href="style.css")
   title ROI-Calculator Option 1
-body.d-flex.flex-column
+body.d-flex.flex-column#site-wrapper
     section.my-auto
         .container
-            .row
-                .col-12.col-md-7.col-lg-5.mx-auto.bg-white.p-4.shadow#form-wrapper
-                    .row.mb-2 
-                        .col-12
-                            h1.h5.text-center Calculate your projected ROI for an incentive program. 
-                            
+            img.img-fluid.first-image(src='/images/isi-super-woman-2.png')
+            .row.mx-auto.mb-3
+                .col-12.col-md-6.mx-auto
+                    h1.text-center Calculate your projected ROI for an incentive program. 
+                    //- small.text-muted.d-block.text-center#step-text
+            .row.mx-auto.mb-2
+                .col-12.col-md-7.col-lg-5.mx-auto.bg-white.p-4.shadow#form-wrapper.border-top.border-primary    
                     .row#roi-form
                         .col-12
                             form(action="")
                                 .form-group
-                                    label(for='participants') Target Number of Incentive Participants
-                                    input#participants.form-control(type='text' aria-describedby='participants')
-                                .form-group
-                                    label(for='avgAnnualSales') Average Annual Sales Per Incentive Participant ($)
-                                    input#avgAnnualSales.form-control(type='text' aria-describedby='avgAnnualSales')
-                                .form-group
-                                    label(for='grossMargin') Average Gross Margin of Sales (%)
+                                    label(for='TargetAudienceSize') Target Size of Incentive Audience
+                                    input#TargetAudienceSize.form-control(type='text' aria-describedby='TargetAudienceSize')
+                                label(for='avgAnnualSales') Average Annual Sales per Audience Member
+                                .input-group.mb-3   
+                                    input#avgAnnualSales.form-control.d-block(type='text' aria-describedby='avgAnnualSales')
+                                    .input-group-append
+                                        span.input-group-text $
+                                label(for='grossMargin') Average Gross Margin (Current Product Sales) %
+                                .input-group.mb-3
                                     input#grossMargin.form-control(type='text' aria-describedby='grossMargin')
-                                .form-group
-                                    label(for='incentivePayout') Percent of Sales Budgeted for Incentive Payout
-                                    input#incentivePayout.form-control(type='text' aria-describedby='incentivePayout')
-                                .form-group
-                                    label(for='currentRoi') Current ROI on Average Marketing Dollars (%)
+                                    .input-group-append
+                                        span.input-group-text %
+                                label(for='currentRoi') Current ROI on Average Marketing Dollars (%)
+                                .input-group.mb-3  
                                     input#currentRoi.form-control(type='text' aria-describedby='currentRoi')
+                                    .input-group-append
+                                        span.input-group-text %
+                                label(for='salesBudgeted') Percent of Sales Budgeted for Incentive Payout
+                                .input-group.mb-3   
+                                    input#salesBudgeted.form-control(type='text' aria-describedby='salesBudgeted')
+                                    .input-group-append
+                                        span.input-group-text %
+                                label(for='salesIncreaseTarget') Sales Increase Target
+                                .input-group.mb-3   
+                                    input#salesIncreaseTarget.form-control(type='text' aria-describedby='salesIncreaseTarget')
+                                    .input-group-append
+                                        span.input-group-text %
                                 .form-group.mb-0
-                                    button.btn.btn-primary.btn-block#calculate(type="button") Calculate ROI
+                                    button.btn.btn-primary.btn-block#nextStep(type="button")    Calculate Your ROI
                                     
                                
 
+            .row#roi-next-step
+                .col-12.col-md-7.col-lg-5.mx-auto.bg-white.p-4.shadow
+                    .row
+                        .col-12
+                            
+                       
+
+                    button.btn.btn-primary.btn-block#calculateRoi(type="button") Calculate Your ROI
             .row#roi-results
                 .col-12.col-md-7.col-lg-5.mx-auto.bg-white.p-4.shadow
                     p Your projected ROI Results
