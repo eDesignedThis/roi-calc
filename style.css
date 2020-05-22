@@ -24,6 +24,16 @@ html {
   z-index: -1;
 }
 
+.btn-primary {
+  background: #ff0000;
+  border-color: #ff0000;
+}
+
+.btn-primary:hover {
+  background-color: #b30000;
+  border-color: #b30000;
+}
+
 #roi-results,
 #roi-next-step {
   display: none;
@@ -35,6 +45,10 @@ html {
   top: 35vh;
   z-index: 0;
   left: -300px;
+}
+
+.dxc-legend {
+  display: none;
 }
 
 @media (min-width: 576px) {

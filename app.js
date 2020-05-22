@@ -26,3 +26,49 @@ $("#calculateRoi").click(function () {
   $("#roi-next-step").css("display", "none");
   $("#roi-results").css("display", "block");
 });
+
+// Chart
+
+var dataSource = [
+  {
+    day: "Revenue Increase",
+    oranges: 3,
+  },
+  {
+    day: "Tuesday",
+    oranges: 2,
+  },
+  {
+    day: "Wednesday",
+    oranges: 3,
+  },
+  {
+    day: "Thursday",
+    oranges: 4,
+  },
+  {
+    day: "Friday",
+    oranges: 6,
+  },
+  {
+    day: "Saturday",
+    oranges: 11,
+  },
+  {
+    day: "Sunday",
+    oranges: 4,
+  },
+];
+
+$(function () {
+  $("#chart").dxChart({
+    dataSource: dataSource,
+    series: {
+      argumentField: "day",
+      valueField: "oranges",
+      name: "",
+      type: "bar",
+      color: "#ffaa66",
+    },
+  });
+});
